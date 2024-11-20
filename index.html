@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .menu {
+            text-align: center;
+        }
+        .menu button {
+            margin: 5px;
+            width: auto;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+        <form id="login-form">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+
+        <div id="menu" class="menu" style="display: none;">
+            <h2>Main Menu</h2>
+            <button onclick="showRegister()">Register User</button>
+            <button onclick="showAddTask()">Add Task</button>
+            <button onclick="viewAllTasks()">View All Tasks</button>
+            <button onclick="viewMyTasks()">View My Tasks</button>
+            <button onclick="showStatistics()">Statistics</button>
+            <button onclick="logout()">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username && password) {
+                alert("Welcome, " + username + "!");
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("menu").style.display = "block";
+            } else {
+                alert("Incorrect login details, please try again.");
+            }
+        }
+
+        function showRegister() {
+            alert("Admin functionality: Register a new user.");
+        }
+
+        function showAddTask() {
+            alert("Functionality to add a new task.");
+        }
+
+        function viewAllTasks() {
+            alert("Functionality to view all tasks.");
+        }
+
+        function viewMyTasks() {
+            alert("Functionality to view tasks assigned to you.");
+        }
+
+        function showStatistics() {
+            alert("Functionality to display statistics.");
+        }
+
+        function logout() {
+            alert("Goodbye!");
+            location.reload();
+        }
+    </script>
+</body>
+</html>
